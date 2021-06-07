@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Professeur } from 'src/app/models/Professeur';
+import { ProfesseurService } from 'src/app/services/professeur.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  public profs:any;
+
+  constructor(private services:ProfesseurService) { }
 
   ngOnInit(): void {
+    this.profs = this.services.getProfs();
   }
-
 }

@@ -1,16 +1,16 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<form (ngSubmit)="onSubmit()" [formGroup]="form">
     <div class="form-group">
         <label>Id</label>
         <input type="number" class="form-control" placeholder="0" formControlName="id">
     </div>
     <div class="form-group">
         <label>Nom</label>
-        <input type="text" class="form-control" placeholder="Oumama"
+        <input type="text" class="form-control" placeholder="Mouad"
             formControlName="nom">
     </div>
     <div class="form-group">
         <label>Prenom</label>
-        <input type="text" class="form-control" placeholder="Elhassouny"
+        <input type="text" class="form-control" placeholder="Louhibi"
             formControlName="prenom">
     </div>
     <div class="form-group">
