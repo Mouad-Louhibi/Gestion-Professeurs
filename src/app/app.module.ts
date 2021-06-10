@@ -7,6 +7,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProfFormComponent } from './components/prof-form/prof-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
+import { ProfesseurService } from './services/professeur.service';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,10 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ProfesseurService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
