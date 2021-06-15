@@ -9,6 +9,7 @@ import { ProfFormComponent } from './components/prof-form/prof-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 import { ProfesseurService } from './services/professeur.service';
+import { ListProfComponent } from './components/list-prof/list-prof.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ProfesseurService } from './services/professeur.service';
     HeaderComponent,
     FooterComponent,
     ProfFormComponent,
+    ListProfComponent,
   ],
   imports: [
     BrowserModule,

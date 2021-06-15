@@ -16,7 +16,6 @@ export class ProfFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      id:new FormControl(''),
       nom:new FormControl('', [Validators.required, Validators.minLength(3)]),
       prenom:new FormControl(''),
       etat:new FormControl('')
@@ -24,12 +23,14 @@ export class ProfFormComponent implements OnInit {
   }
 
   public onSubmit():void{
-    console.warn(this.form.value)
     this.service.addProf(
-      new Professeur(this.form.controls['id'].value, 
-      this.form.controls['nom'].value, 
-      this.form.controls['prenom'].value, 
-      this.form.controls['etat'].value))
+      new Professeur(
+          this.form.controls['nom'].value, 
+          this.form.controls['prenom'].value, 
+          this.form.controls['etat'].value
+        )
+      )
       this.form.reset()
   }
+  
 }

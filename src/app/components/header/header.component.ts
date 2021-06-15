@@ -9,11 +9,9 @@ import { ProfesseurService } from 'src/app/services/professeur.service';
 })
 export class HeaderComponent implements OnInit {
 
-  public profs:any;
-
-  constructor(private services:ProfesseurService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.profs = this.services.getProfs();
+    
   }
 }

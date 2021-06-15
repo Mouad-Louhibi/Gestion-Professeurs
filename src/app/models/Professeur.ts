@@ -1,11 +1,9 @@
 export class Professeur{
-    public id: number;
     public nom: string;
     public prenom: string;
     public etat: string;
 
-    public constructor(id = 0, nom = "", prenom = "", etat = ""){
-        this.id = id;
+    public constructor(nom = "", prenom = "", etat = ""){
         this.nom = nom;
         this.prenom = prenom;
         this.etat = etat;

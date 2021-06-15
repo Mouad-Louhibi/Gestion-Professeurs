@@ -9,7 +9,7 @@
           <a class="nav-link" routerLink="/add" routerLinkActive="active">Add</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">List</a>
+          <a class="nav-link" href="/list">List</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Other</a>
@@ -18,21 +18,3 @@
     </div>
   </nav>
   <router-outlet></router-outlet>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nom</th>
-        <th scope="col">Prenom</th>
-        <th scope="col">Etat</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let prof of profs">
-        <th scope="row">{{ prof.id }}</th>
-        <td>{{ prof.nom }}</td>
-        <td>{{ prof.prenom }}</td>
-        <td>{{ prof.etat }}</td>
-      </tr>
-    </tbody>
-  </table>
