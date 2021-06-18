@@ -35,4 +35,13 @@ export class ProfesseurService {
   public getProfs():Array<Professeur>{
     return this.profs
   }
+
+  public deleteProf(id:String):void{
+    this.httpClient.delete(this.url + '/' + id);
+    // .subscribe(
+    //   (res) => { this.profs.push(prof) },
+    //   (err) => { console.log(err) },
+    //   () => { console.log("Professeur Created") }
+    // );
+  }
 }
