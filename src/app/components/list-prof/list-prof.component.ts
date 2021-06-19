@@ -10,20 +10,18 @@ import { ProfesseurService } from '../../services/professeur.service';
 export class ListProfComponent implements OnInit {
 
   public profs:any;
-  public prof:Professeur
+  public profId:string
 
   constructor(private services:ProfesseurService) {
-    this.prof = new Professeur()
+    this.profId = ''
   }
 
   ngOnInit(): void {
     this.profs = this.services.getProfs();
   }
 
-  // deleteItem(prof:Professeur){
-  //   this.service.deletePost(prof.id)
-  //       .subscribe(response => {
-  //         this.prof = this.profs.filter(item => item.id !== post.id);
-  //       });
-  // }
+  deleteProf(id:string){
+    this.services.deleteProf(id)
+    this.profs.filter((item: { id: string; }) => item.id !== id);
+  }
 }

@@ -37,11 +37,14 @@ export class ProfesseurService {
   }
 
   public deleteProf(id:String):void{
-    this.httpClient.delete(this.url + '/' + id);
-    // .subscribe(
-    //   (res) => { this.profs.push(prof) },
-    //   (err) => { console.log(err) },
-    //   () => { console.log("Professeur Created") }
-    // );
+    this.httpClient.delete(this.url + '/' + id)
+    .subscribe({
+      next: data => {
+        'Delete successful';
+      },
+      error: error => {
+          console.error('There was an error!', error)
+      },
+    })
   }
 }
