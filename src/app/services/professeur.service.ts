@@ -24,12 +24,22 @@ export class ProfesseurService {
 
   // POST Professeur
   public addProf(prof:Professeur):void{
+    console.log(prof)
     this.httpClient.post<Professeur>(this.url, prof)
     .subscribe(
       (res) => { this.profs.push(prof) },
       (err) => { console.log(err) },
       () => { console.log("Professeur Created") }
     );
+  }
+
+  public updateProf(prof:Professeur):void{
+    this.httpClient.put<Professeur>(this.url, prof)
+    .subscribe({
+        error: error => {
+          console.error('There was an error!', error);
+        }
+    });
   }
 
   public getProfs():Array<Professeur>{
@@ -43,7 +53,7 @@ export class ProfesseurService {
         'Delete successful';
       },
       error: error => {
-          console.error('There was an error!', error)
+        console.error('There was an error!', error)
       },
     })
   }

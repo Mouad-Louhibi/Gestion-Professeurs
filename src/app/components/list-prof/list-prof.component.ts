@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Professeur } from 'src/app/models/Professeur';
 import { ProfesseurService } from '../../services/professeur.service';
 
 @Component({
@@ -21,7 +20,7 @@ export class ListProfComponent implements OnInit {
   }
 
   deleteProf(id:string){
+    this.profs =  this.profs.filter((item: { id: string; }) => item.id !== id);
     this.services.deleteProf(id)
-    this.profs.filter((item: { id: string; }) => item.id !== id);
   }
 }
