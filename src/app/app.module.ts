@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 import { ProfesseurService } from './services/professeur.service';
 import { ListProfComponent } from './components/list-prof/list-prof.component';
+import { MainPageComponent } from './components/main-page/main-page.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ListProfComponent } from './components/list-prof/list-prof.component';
     FooterComponent,
     ProfFormComponent,
     ListProfComponent,
+    MainPageComponent,
   ],
   imports: [
     BrowserModule,
