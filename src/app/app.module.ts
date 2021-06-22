@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { ProfesseurService } from './services/professeur.service';
 import { ListProfComponent } from './components/list-prof/list-prof.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
+import { EditProfComponent } from './components/edit-prof/edit-prof.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { MainPageComponent } from './components/main-page/main-page.component';
     ProfFormComponent,
     ListProfComponent,
     MainPageComponent,
+    EditProfComponent,
   ],
   imports: [
     BrowserModule,

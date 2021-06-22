@@ -20,6 +20,7 @@
                 <td>{{ prof.prenom }}</td>
                 <td>{{ prof.etat }}</td>
                 <td>
+                    <a href="/edit-prof" class="btn btn-warning" (click)="sendProf(prof.id)">Modifier</a>
                     <form class="d-inline">
                         <input type="submit" value="Supprimer" class="btn btn-danger" (click)="deleteProf(prof.id)">
                     </form>
