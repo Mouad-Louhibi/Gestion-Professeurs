@@ -12,6 +12,7 @@ import { ProfesseurService } from './services/professeur.service';
 import { ListProfComponent } from './components/list-prof/list-prof.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { EditProfComponent } from './components/edit-prof/edit-prof.component';
+import { StatisticComponent } from './components/statistic/statistic.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { EditProfComponent } from './components/edit-prof/edit-prof.component';
     ListProfComponent,
     MainPageComponent,
     EditProfComponent,
+    StatisticComponent,
   ],
   imports: [
     BrowserModule,

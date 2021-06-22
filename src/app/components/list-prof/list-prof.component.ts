@@ -21,14 +21,17 @@ export class ListProfComponent implements OnInit {
 
   ngOnInit(): void {
     this.profs = this.services.getProfs();
+    this.shared.currentId.subscribe(profId => this.profId = profId)
   }
 
   deleteProf(id:string){
-    this.profs =  this.profs.filter((item: { id: string; }) => item.id !== id);
+    this.profs = this.profs.filter((item: { id: string; }) => item.id !== id);
     this.services.deleteProf(id)
   }
 
-  sendProf(id:string){
-    return this.shared.setProf(id)
+  newProfId(profId:string){
+    // console.log('List: ', profId)
+
+    this.shared.setProf('New Id')
   }
 }

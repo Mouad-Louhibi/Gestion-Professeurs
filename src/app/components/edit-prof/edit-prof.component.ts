@@ -13,24 +13,16 @@ export class EditProfComponent implements OnInit {
 
   public form:any;
   public prof:Professeur
-  public id:string;
-  // public prenom:string;
-  // public etat:string;
+  public profId:string;
 
-  constructor(private service:ProfesseurService, private share:SharedService) {
+  constructor(private service:ProfesseurService, private shared:SharedService) {
     this.prof = new Professeur
-    this.id = share.getProf()
-    window.alert(this.id)
-    // this.nom = ''
-    // this.prenom = ''
-    // this.etat = ''
+    this.profId = ''
+    this.shared.currentId.subscribe(profId => this.profId = profId)
+    console.log('Edit profId', this.profId)
   }
 
   ngOnInit(): void {
-    // this.prof = this.shared.getProf();
-    // this.nom = this.prof.nom;
-    // this.prenom = this.prof.prenom;
-    // this.etat = this.prof.etat;
     this.form = new FormGroup({
       nom:new FormControl('', [Validators.required, Validators.minLength(3)]),
       prenom:new FormControl(''),

@@ -1,21 +1,18 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SharedService {
 
-  id!: string;
+  private idSource = new BehaviorSubject<string>("Default Id")
+  currentId = this.idSource.asObservable()
 
   constructor() {}
 
-  public setProf(id:string){
-    this.id = id
-    window.alert(this.id)
-  }
-
-  public getProf(){
-    window.alert(this.id)
-    return this.id
+  public setProf(profId:string){
+    window.alert(profId)
+    this.idSource.next(profId)
   }
 }
