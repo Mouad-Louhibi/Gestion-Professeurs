@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Professeur } from 'src/app/models/Professeur';
 import { ProfesseurService } from 'src/app/services/professeur.service';
-import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-edit-prof',
@@ -11,34 +10,33 @@ import { SharedService } from 'src/app/services/shared.service';
 })
 export class EditProfComponent implements OnInit {
 
-  public form:any;
-  public prof:Professeur
-  public profId:string;
+  public form: any;
+  public prof: Professeur
 
-  constructor(private service:ProfesseurService, private shared:SharedService) {
-    this.prof = new Professeur
-    this.profId = ''
-    this.shared.currentId.subscribe(profId => this.profId = profId)
-    console.log('Edit profId', this.profId)
+  constructor(private service: ProfesseurService) {
+    this.prof = service.getEditProf()
   }
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      nom:new FormControl('', [Validators.required, Validators.minLength(3)]),
-      prenom:new FormControl(''),
-      etat:new FormControl('')
+      nom: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      prenom: new FormControl(''),
+      etat: new FormControl('')
     })
   }
 
-  public onSubmit():void{
-    this.service.addProf(
-      new Professeur(
-          '',
-          this.form.controls['nom'].value, 
-          this.form.controls['prenom'].value, 
-          this.form.controls['etat'].value
-        )
-      )
-      this.form.reset()
+  public onSubmit(): void {
+    var profObj = {
+      id: this.prof.id,
+      nom: this.form.controls['nom'].value,
+      prenom: this.form.controls['prenom'].value,
+      etat: this.form.controls['etat'].value,
+      profId: this.prof.profId
+    }
+    if (profObj.nom === '') profObj.nom = this.prof.nom
+    if (profObj.prenom === '') profObj.prenom = this.prof.prenom
+    if (profObj.etat === '') profObj.etat = this.prof.etat
+    this.service.updateProf(profObj)
+    console.log("FORM:", profObj)
   }
 }

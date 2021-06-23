@@ -10,7 +10,7 @@ const routes: Routes = [
   {path:'add-prof',component:ProfFormComponent},
   {path:'list-prof',component:ListProfComponent},
   {path:'edit-prof',component:EditProfComponent},
-  {path:'main', component:MainPageComponent},
+  {path:'', component:MainPageComponent},
   {path:'statistic', component:StatisticComponent}
   // {path:"**",component:ErrorComponent},
 ];

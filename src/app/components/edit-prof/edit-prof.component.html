@@ -6,23 +6,22 @@
     <form (ngSubmit)="onSubmit()" [formGroup]="form">
         <div class="form-group">
             <label>Nom</label>
-            <input type="text" class="form-control" placeholder="First Name"
+            <input type="text" value="{{ prof.nom }}" class="form-control" placeholder="First Name"
                 formControlName="nom">
         </div>
         <div class="form-group">
             <label>Prenom</label>
-            <input type="text" class="form-control" placeholder="Last Name"
+            <input type="text" value="{{ prof.prenom }}" class="form-control" placeholder="Last Name"
                 formControlName="prenom">
         </div>
         <div class="form-group">
             <label>Etat</label>
-            <select class="form-control" formControlName="etat">
+            <select class="form-control" formControlName="etat" value="{{ prof.etat }}">
                 <option>Interne</option>
                 <option>Collaborateur</option>
             </select>
         </div>
-        <button type="submit" class="btn btn-primary" [disabled]="!form.valid">
-            Ajouter Professeur
-        </button>
+        <a href="/list-prof" class="btn btn-warning" (click)="onSubmit()">Modifier Professeur</a>
+
     </form>
 </div>
