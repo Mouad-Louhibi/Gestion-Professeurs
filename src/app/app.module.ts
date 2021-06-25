@@ -13,6 +13,7 @@ import { ListProfComponent } from './components/list-prof/list-prof.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { EditProfComponent } from './components/edit-prof/edit-prof.component';
 import { StatisticComponent } from './components/statistic/statistic.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { StatisticComponent } from './components/statistic/statistic.component';
     MainPageComponent,
     EditProfComponent,
     StatisticComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
