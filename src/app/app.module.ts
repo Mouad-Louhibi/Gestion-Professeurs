@@ -14,6 +14,7 @@ import { MainPageComponent } from './components/main-page/main-page.component';
 import { EditProfComponent } from './components/edit-prof/edit-prof.component';
 import { StatisticComponent } from './components/statistic/statistic.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ChartComponent } from './components/chart/chart.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     EditProfComponent,
     StatisticComponent,
     DashboardComponent,
+    ChartComponent,
   ],
   imports: [
     BrowserModule,
