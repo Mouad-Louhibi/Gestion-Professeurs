@@ -4,14 +4,13 @@ import { ProfFormComponent } from './components/prof-form/prof-form.component';
 import { ListProfComponent } from './components/list-prof/list-prof.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { EditProfComponent } from './components/edit-prof/edit-prof.component';
-import { StatisticComponent } from './components/statistic/statistic.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
   {path:'add-prof',component:ProfFormComponent},
   {path:'list-prof',component:ListProfComponent},
   {path:'edit-prof',component:EditProfComponent},
-  // {path:'', component:MainPageComponent},
-  {path:'statistic', component:StatisticComponent}
+  {path:'', component:DashboardComponent},
   // {path:"**",component:ErrorComponent},
 ];
 

@@ -12,7 +12,6 @@ import { ProfesseurService } from './services/professeur.service';
 import { ListProfComponent } from './components/list-prof/list-prof.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { EditProfComponent } from './components/edit-prof/edit-prof.component';
-import { StatisticComponent } from './components/statistic/statistic.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ChartComponent } from './components/dashboard/chart/chart.component';
 
@@ -25,7 +24,6 @@ import { ChartComponent } from './components/dashboard/chart/chart.component';
     ListProfComponent,
     MainPageComponent,
     EditProfComponent,
-    StatisticComponent,
     DashboardComponent,
     ChartComponent,
   ],
