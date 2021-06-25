@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 
 import { Chart, registerables } from 'chart.js';
 
@@ -9,12 +9,16 @@ Chart.register(...registerables)
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.scss']
 })
-export class ChartComponent implements OnInit {
+export class ChartComponent implements AfterViewInit {
+
+  @Input('my-id') myId = '';
+  // @Input('type') type = 'bar';
 
   constructor() { }
 
-  ngOnInit(): void {
-    var myChart = new Chart('myChart', {
+  ngAfterViewInit() {
+    new Chart(this.myId, {
+      // type: this.type,
       type: 'bar',
       data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
