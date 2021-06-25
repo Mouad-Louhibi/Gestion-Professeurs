@@ -1,5 +1,4 @@
 import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
-
 import { Chart, registerables } from 'chart.js';
 
 Chart.register(...registerables)
@@ -12,14 +11,14 @@ Chart.register(...registerables)
 export class ChartComponent implements AfterViewInit {
 
   @Input('my-id') myId = '';
-  // @Input('type') type = 'bar';
+  @Input('type') type = 'bar';
+  @Input('data') data = [];
 
   constructor() { }
 
   ngAfterViewInit() {
-    new Chart(this.myId, {
-      // type: this.type,
-      type: 'bar',
+    var myChart = new Chart(this.myId, {
+      type: this.type,
       data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
         datasets: [{

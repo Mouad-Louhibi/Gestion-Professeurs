@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProfesseurService } from 'src/app/services/professeur.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,7 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  public profs: any = [
+    {
+      // fullName: 'Mouad Louhibi',
+      nbrCompetances: 10
+    },
+    {
+      // fullName: 'Mouad Louhibi',
+      nbrCompetances: 10
+    }
+  ]
+
+  constructor(private service:ProfesseurService) { 
+    // this.profs = this.service.getProfs();
+  }
 
   ngOnInit(): void { }
 
