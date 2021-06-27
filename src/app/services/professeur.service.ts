@@ -16,56 +16,56 @@ export class ProfesseurService {
     this.profs = new Array<Professeur>();
     // GET Professeurs
     this.httpClient.get<Array<Professeur>>(this.url)
-    .subscribe(
-      (res) => { this.profs.push(...res) },
-      (err) => { console.log(err) },
-      () => { console.log("fin") }
-    );
+      .subscribe(
+        (res) => { this.profs.push(...res) },
+        (err) => { console.log(err) },
+        () => { console.log("fin") }
+      );
     this.profs = new Array<Professeur>();
   }
 
   // POST Professeur
-  public addProf(prof:Professeur):void{
+  public addProf(prof: Professeur): void {
     console.log(prof)
     this.httpClient.post<Professeur>(this.url, prof)
-    .subscribe(
-      (res) => { this.profs.push(prof) },
-      (err) => { console.log(err) },
-      () => { console.log("Professeur Created") }
-    );
+      .subscribe(
+        (res) => { this.profs.push(prof) },
+        (err) => { console.log(err) },
+        () => { console.log("Professeur Created") }
+      );
   }
 
-  public updateProf(prof:Professeur):void{
+  public updateProf(prof: Professeur): void {
     let profObj = {
       nom: prof.nom,
       prenom: prof.prenom,
       etat: prof.etat
     }
     this.httpClient.patch<Professeur>(this.url + '/' + prof.profId, profObj)
-    .subscribe({
+      .subscribe({
         error: error => {
           console.error('There was an error!', error);
         }
-    });
+      });
   }
 
-  public getProfs():Array<Professeur>{
+  public getProfs(): Array<Professeur> {
     return this.profs
   }
 
-  public deleteProf(id:String):void{
+  public deleteProf(id: String): void {
     this.httpClient.delete(this.url + '/' + id)
-    .subscribe({
-      next: data => {
-        'Delete successful';
-      },
-      error: error => {
-        console.error('There was an error!', error)
-      },
-    })
+      .subscribe({
+        next: data => {
+          'Delete successful';
+        },
+        error: error => {
+          console.error('There was an error!', error)
+        },
+      })
   }
 
-  public editProf(profToUpdate:any):void{
+  public editProf(profToUpdate: any): void {
     const profObj = {
       nom: profToUpdate.nom,
       prenom: profToUpdate.prenom,
@@ -74,26 +74,26 @@ export class ProfesseurService {
     }
     console.log("PTCH:", profObj)
     this.httpClient.patch<Professeur>(this.updateUrl, profObj)
-    .subscribe({
+      .subscribe({
         error: error => {
           console.error('There was an error!', error);
         }
-    });
+      });
   }
 
-  getEditProf():Professeur{
-    let prof:Professeur = new Professeur()
+  getEditProf(): Professeur {
+    let prof: Professeur = new Professeur()
     this.httpClient.get<Array<Professeur>>(this.getUrl)
-    .subscribe(
-      (res) => {
-        prof.id = res[0].id,
-        prof.nom = res[0].nom,
-        prof.prenom = res[0].prenom,
-        prof.etat = res[0].etat
-        prof.profId = res[0].profId
-      },
-      (err) => { console.log(err) }
-    );
+      .subscribe(
+        (res) => {
+          prof.id = res[0].id,
+            prof.nom = res[0].nom,
+            prof.prenom = res[0].prenom,
+            prof.etat = res[0].etat
+          prof.profId = res[0].profId
+        },
+        (err) => { console.log(err) }
+      );
     return prof
   }
 }

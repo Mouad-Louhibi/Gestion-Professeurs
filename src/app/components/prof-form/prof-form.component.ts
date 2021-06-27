@@ -10,28 +10,28 @@ import { ProfesseurService } from 'src/app/services/professeur.service';
 })
 export class ProfFormComponent implements OnInit {
 
-  public form:any;
+  public form: any;
 
-  constructor(private service:ProfesseurService) {}
+  constructor(private service: ProfesseurService) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      nom:new FormControl('', [Validators.required, Validators.minLength(3)]),
-      prenom:new FormControl(''),
-      etat:new FormControl('')
+      nom: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      prenom: new FormControl(''),
+      etat: new FormControl('')
     })
   }
 
-  public onSubmit():void{
+  public onSubmit(): void {
     this.service.addProf(
       new Professeur(
-          '',
-          this.form.controls['nom'].value, 
-          this.form.controls['prenom'].value, 
-          this.form.controls['etat'].value
-        )
+        '',
+        this.form.controls['nom'].value,
+        this.form.controls['prenom'].value,
+        this.form.controls['etat'].value
       )
-      this.form.reset()
+    )
+    this.form.reset()
   }
-  
+
 }

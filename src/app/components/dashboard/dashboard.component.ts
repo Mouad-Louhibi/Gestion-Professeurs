@@ -11,7 +11,7 @@ export class DashboardComponent implements OnInit {
 
   public profs: Array<Professeur>
 
-  constructor(private service:ProfesseurService) { 
+  constructor(private service: ProfesseurService) {
     this.profs = this.service.getProfs();
   }
 

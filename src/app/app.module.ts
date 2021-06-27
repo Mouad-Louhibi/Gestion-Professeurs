@@ -14,6 +14,7 @@ import { MainPageComponent } from './components/main-page/main-page.component';
 import { EditProfComponent } from './components/edit-prof/edit-prof.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ChartComponent } from './components/dashboard/chart/chart.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ChartComponent } from './components/dashboard/chart/chart.component';
     EditProfComponent,
     DashboardComponent,
     ChartComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
