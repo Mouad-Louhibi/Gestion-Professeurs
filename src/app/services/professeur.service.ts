@@ -9,7 +9,7 @@ export class ProfesseurService {
 
   public profs: Array<Professeur>
   private url: string = "http://localhost:1337/professeur";
-  private updateUrl: string = "http://localhost:1337/edit-professeur/60d39ad6b6e6d41994534da9";
+  private updateUrl: string = "http://localhost:1337/edit-professeur/60d8b40101c6653f70510e61";
   private getUrl: string = "http://localhost:1337/edit-professeur";
 
   constructor(private httpClient: HttpClient) {
