@@ -15,6 +15,7 @@ import { EditProfComponent } from './components/edit-prof/edit-prof.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ChartComponent } from './components/dashboard/chart/chart.component';
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { LoginComponent } from './components/login/login.component';
     DashboardComponent,
     ChartComponent,
     LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

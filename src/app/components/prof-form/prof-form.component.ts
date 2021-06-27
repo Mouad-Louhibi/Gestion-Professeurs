@@ -33,5 +33,4 @@ export class ProfFormComponent implements OnInit {
     )
     this.form.reset()
   }
-
 }

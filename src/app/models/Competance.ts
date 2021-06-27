@@ -1,4 +1,4 @@
-export class Project {
+export class Competance {
     public id: string;
     public nom: string;
     public description: string;

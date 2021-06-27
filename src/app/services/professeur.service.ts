@@ -18,8 +18,7 @@ export class ProfesseurService {
     this.httpClient.get<Array<Professeur>>(this.url)
       .subscribe(
         (res) => { this.profs.push(...res) },
-        (err) => { console.log(err) },
-        () => { console.log("fin") }
+        (err) => { console.log(err) }
       );
     this.profs = new Array<Professeur>();
   }

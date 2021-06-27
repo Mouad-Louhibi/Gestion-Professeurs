@@ -1,11 +1,15 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="/">PROF</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
     aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="navbar-brand" href="/">PROF</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav mr-auto" *ngIf="user.etat == 'OnLine'">
       <li class="nav-item active">
         <div class="dropdown">
           <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
@@ -33,7 +37,7 @@
       <li class="nav-item">
         <div class="dropdown">
           <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
+            aria-haspopup="true" aria-expanded="false" *ngIf="user.etat == 'OnLine'">
             Competances
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -42,8 +46,19 @@
           </div>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Statistiques</a>
+    </ul>
+    <ul class="navbar-nav text-right">
+      <li class="nav-item active">
+        <a class="nav-link" href="/login" *ngIf="etat == 'Register' && user.etat == 'OffLine'" (click)="etat = 'Login'">Login</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" *ngIf="etat == 'Login' && user.etat == 'OffLine'" (click)="etat = 'Register'">Register</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" *ngIf="user.etat == 'OnLine'" (click)="etat = 'Register'">Logout</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" *ngIf="user.etat == 'OnLine'">{{ user.rules }}</a>
       </li>
     </ul>
   </div>
