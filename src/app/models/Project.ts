@@ -3,17 +3,17 @@ export class Project{
     public sujet: string;
     public description: string;
     public chef: string;
+    public chercheur: string;
     public dateDebut: string;
-    public dateEsFin: string;
     public projetId:string;
 
-    public constructor(id="", sujet ="", description ="", chef ="", dateDebut ="", dateEsFin ="", projetId="") {
+    public constructor(id="", sujet ="", description ="", chef ="", chercheur="", dateDebut ="", projetId="") {
         this.id = id;
         this.sujet = sujet;
         this.description = description;
         this.chef = chef;
+        this.chercheur = chercheur;
         this.dateDebut = dateDebut;
-        this.dateEsFin = dateEsFin;
         this.projetId = projetId;
     }
 }

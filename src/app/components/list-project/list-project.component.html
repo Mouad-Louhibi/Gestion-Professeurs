@@ -11,14 +11,16 @@
                 <th scope="col">Description</th>
                 <th scope="col">Chef de Projet</th>
                 <th scope="col">Chercheur</th>
+                <th scope="col">Options</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
+                <th scope="row">{{ projects.id }}</th>
+                <td>{{ projects.sujet }}</td>
+                <td>{{ projects.description }}</td>
+                <td>{{ projects.chef }}</td>
+                <td>{{ projects.chercheur }}</td>
                 <td>
                     <form class="d-inline">
                         <input type="submit" value="Supprimer" class="btn btn-danger">
