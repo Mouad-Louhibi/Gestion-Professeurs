@@ -32,7 +32,16 @@ export class UserService {
   public login(user: User): void {
     this.httpClient.post<any>(this.urlLogin, user)
       .subscribe(
-        // (res) => { console.log(res) },
+        (res) => { console.log('Login', res) },
+        (err) => { console.log(err) },
+      );
+  }
+
+  // POST Professeur
+  public logout(): void {
+    this.httpClient.get<any>(this.urlLogout)
+      .subscribe(
+        (res) => { console.log('Logout:', res) },
         (err) => { console.log(err) },
       );
   }

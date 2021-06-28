@@ -50,13 +50,14 @@
     </ul>
     <ul class="navbar-nav text-right">
       <li class="nav-item active">
-        <a class="nav-link" href="/login" *ngIf="etat == 'Register' && user.etat == 'OffLine'" (click)="etat = 'Login'">Login</a>
+        <a class="nav-link" href="/login" *ngIf="etat == 'Register' && user.etat == 'OffLine'"
+          (click)="etat = 'Login'">Login</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" *ngIf="etat == 'Login' && user.etat == 'OffLine'" (click)="etat = 'Register'">Register</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" *ngIf="user.etat == 'OnLine'" (click)="etat = 'Register'">Logout</a>
+        <button><a class="nav-link" *ngIf="user.etat == 'OnLine'" (click)="exit()">Logout</a></button>
       </li>
       <li class="nav-item active">
         <a class="nav-link" *ngIf="user.etat == 'OnLine'">{{ user.rules }}</a>

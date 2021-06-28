@@ -15,6 +15,8 @@ export class DashboardComponent implements OnInit {
     this.profs = this.service.getProfs();
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    // location.reload();
+  }
 
 }

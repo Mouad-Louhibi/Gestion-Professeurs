@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from 'src/app/models/User';
 import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   public form: any;
 
-  constructor(private service: UserService) { }
+  constructor(private service: UserService, private router: Router) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -37,7 +38,6 @@ export class LoginComponent implements OnInit {
         ''
       )
     )
-    // this.location.replace('/'); // clears browser history so they can't navigate with back button
-    // this.router.navigate(['/']);
+    this.router.navigate(['/']);
   }
 }

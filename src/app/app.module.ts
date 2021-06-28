@@ -16,6 +16,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ChartComponent } from './components/dashboard/chart/chart.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { ListProjectComponent } from './components/list-project/list-project.component';
+import { AddProjectComponent } from './components/add-project/add-project.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { RegisterComponent } from './components/register/register.component';
     ChartComponent,
     LoginComponent,
     RegisterComponent,
+    ListProjectComponent,
+    AddProjectComponent,
   ],
   imports: [
     BrowserModule,
