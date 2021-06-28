@@ -16,12 +16,16 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      password: new FormControl(''),
+      email: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required]),
     })
   }
 
   public onSubmit(): void {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@usmba.ac.ma/;
+    if (!re.test(String(this.form.controls['email'].value).toLowerCase())) {
+      window.alert('Vueillez utiliser votre Email Usmba')
+    }
     this.service.login(
       new User(
         '',
@@ -33,6 +37,7 @@ export class LoginComponent implements OnInit {
         ''
       )
     )
-    this.form.reset()
+    // this.location.replace('/'); // clears browser history so they can't navigate with back button
+    // this.router.navigate(['/']);
   }
 }
