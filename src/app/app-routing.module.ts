@@ -9,6 +9,7 @@ import { AddProjectComponent } from './components/add-project/add-project.compon
 import { ListProjectComponent } from './components/list-project/list-project.component';
 import { AddCompetanceComponent } from './components/add-competance/add-competance.component';
 import { ListCompetanceComponent } from './components/list-competance/list-competance.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
   {path:'add-prof',component:ProfFormComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path:'add-competance',component:AddCompetanceComponent},
   {path:'list-competance',component:ListCompetanceComponent},
   {path:'login',component:LoginComponent},
+  {path:'register',component:RegisterComponent},
   {path:'', component:DashboardComponent},
   // {path:"**",component:ErrorComponent},
 ];

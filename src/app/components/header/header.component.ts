@@ -22,7 +22,6 @@ export class HeaderComponent implements OnInit {
   }
 
   exit() {
-    this.etat = 'Register'
     this.service.logout()
   }
 }
