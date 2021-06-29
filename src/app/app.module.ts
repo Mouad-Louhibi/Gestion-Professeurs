@@ -18,6 +18,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ListProjectComponent } from './components/list-project/list-project.component';
 import { AddProjectComponent } from './components/add-project/add-project.component';
+import { AddCompetanceComponent } from './components/add-competance/add-competance.component';
+import { ListCompetanceComponent } from './components/list-competance/list-competance.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { AddProjectComponent } from './components/add-project/add-project.compon
     RegisterComponent,
     ListProjectComponent,
     AddProjectComponent,
+    AddCompetanceComponent,
+    ListCompetanceComponent,
   ],
   imports: [
     BrowserModule,

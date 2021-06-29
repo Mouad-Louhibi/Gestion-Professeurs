@@ -7,6 +7,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
 import { AddProjectComponent } from './components/add-project/add-project.component';
 import { ListProjectComponent } from './components/list-project/list-project.component';
+import { AddCompetanceComponent } from './components/add-competance/add-competance.component';
+import { ListCompetanceComponent } from './components/list-competance/list-competance.component';
 
 const routes: Routes = [
   {path:'add-prof',component:ProfFormComponent},
@@ -14,6 +16,8 @@ const routes: Routes = [
   {path:'edit-prof',component:EditProfComponent},
   {path:'add-project',component:AddProjectComponent},
   {path:'list-project',component:ListProjectComponent},
+  {path:'add-competance',component:AddCompetanceComponent},
+  {path:'list-competance',component:ListCompetanceComponent},
   {path:'login',component:LoginComponent},
   {path:'', component:DashboardComponent},
   // {path:"**",component:ErrorComponent},

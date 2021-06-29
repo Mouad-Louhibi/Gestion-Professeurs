@@ -14,9 +14,10 @@ export class AddProjectComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      nom: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      prenom: new FormControl(''),
-      etat: new FormControl('')
+      sujet: new FormControl(''),
+      description: new FormControl(''),
+      chef: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      chercheur: new FormControl('', [Validators.required, Validators.minLength(3)]),
     })
   }
 

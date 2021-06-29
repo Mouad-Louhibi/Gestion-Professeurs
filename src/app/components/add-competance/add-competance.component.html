@@ -1,11 +1,11 @@
 <div class="container">
     <ol class="breadcrumb mt-4">
-        <li class="breadcrumb-item"><a href="/list-project">Projets</a></li>
+        <li class="breadcrumb-item"><a href="/list-competance">Projets</a></li>
         <li class="breadcrumb-item active">Ajouter</li>
     </ol>
     <form [formGroup]="form">
         <div class="form-group">
-            <label>Sujet</label>
+            <label>Nom</label>
             <input type="text" class="form-control" placeholder="First Name" formControlName="nom">
         </div>
         <div class="form-group">
@@ -15,22 +15,8 @@
                     formControlName="prenom"></textarea>
             </div>
         </div>
-        <div class="form-group">
-            <label>Chef de Projet</label>
-            <select class="form-control" formControlName="etat">
-                <option>Interne</option>
-                <option>Collaborateur</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label>Chercheur</label>
-            <select class="form-control" formControlName="etat">
-                <option>Interne</option>
-                <option>Collaborateur</option>
-            </select>
-        </div>
         <button type="submit" class="btn btn-primary">
-            Ajouter Projet
+            Ajouter Competance
         </button>
     </form>
 </div>

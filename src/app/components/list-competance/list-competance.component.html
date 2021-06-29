@@ -15,12 +15,10 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let project of projects">
-                <th scope="row">{{ project.id }}</th>
-                <td>{{ project.sujet }}</td>
-                <td>{{ project.description }}</td>
-                <td>{{ project.chef }}</td>
-                <td>{{ project.chercheur }}</td>
+            <tr *ngFor="let competance of competances">
+                <th scope="row">{{ competance.id }}</th>
+                <td>{{ competance.nom }}</td>
+                <td>{{ competance.description }}</td>
                 <td>
                     <form class="d-inline">
                         <input type="submit" value="Supprimer" class="btn btn-danger">
