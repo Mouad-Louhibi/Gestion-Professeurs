@@ -21,6 +21,12 @@
                 <option>Collaborateur</option>
             </select>
         </div>
+        <div class="form-group">
+            <label>Competance</label>
+            <select class="form-control" formControlName="competance" value="{{ prof.competance }}">
+                <option>Interne</option>
+            </select>
+        </div>
         <a href="/list-prof" class="btn btn-warning" (click)="onSubmit()">Modifier Professeur</a>
 
     </form>
