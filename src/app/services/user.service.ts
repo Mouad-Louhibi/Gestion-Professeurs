@@ -17,18 +17,35 @@ export class UserService {
   constructor(private httpClient: HttpClient) {
     this.httpClient.get<any>(this.urlCurrent)
       .subscribe(
-        (res) => { 
+        (res) => {
           this.currnetUser.nom = res.nom,
-          this.currnetUser.prenom = res.prenom,
-          this.currnetUser.etat = res.etat,
-          this.currnetUser.email = res.email,
-          this.currnetUser.rules = res.rules
-         },
+            this.currnetUser.prenom = res.prenom,
+            this.currnetUser.etat = res.etat,
+            this.currnetUser.email = res.email,
+            this.currnetUser.rules = res.rules
+        },
         (err) => { console.log(err) }
       );
   }
 
-  // POST Professeur
+  // POST User
+  public register(user: User): void {
+    console.log('This USER:', user)
+    const newUser = {
+      nom: user.nom,
+      prenom: user.password,
+      email: user.email,
+      password: user.password,
+    }
+    this.httpClient.post<User>(this.url, newUser)
+      .subscribe(
+        (res) => { console.log(res) },
+        (err) => { console.log(err) },
+        () => { console.log("User Created") }
+      );
+  }
+
+  // LOGIN User
   public login(user: User): void {
     this.httpClient.post<any>(this.urlLogin, user)
       .subscribe(
@@ -37,7 +54,7 @@ export class UserService {
       );
   }
 
-  // POST Professeur
+  // LOGOUT User
   public logout(): void {
     this.httpClient.get<any>(this.urlLogout)
       .subscribe(
