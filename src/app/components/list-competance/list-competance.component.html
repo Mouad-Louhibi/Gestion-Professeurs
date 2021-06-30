@@ -9,7 +9,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Nom</th>
                 <th scope="col">Description</th>
-                <th scope="col">Option</th>
+                <th scope="col" *ngIf="user.rules == 'SUPER_USER'">Option</th>
             </tr>
         </thead>
         <tbody>
@@ -19,7 +19,7 @@
                 <td>{{ competance.description }}</td>
                 <td>
                     <form class="d-inline">
-                        <input type="submit" value="Supprimer" class="btn btn-danger">
+                        <input type="submit" value="Supprimer" class="btn btn-danger" *ngIf="user.rules == 'SUPER_USER'" (click)="deleteCompetance(competance.id)">
                     </form>
                 </td>
             </tr>

@@ -11,7 +11,7 @@
                 <th scope="col">Description</th>
                 <th scope="col">Chef de Projet</th>
                 <th scope="col">Chercheur</th>
-                <th scope="col">Option</th>
+                <th scope="col" *ngIf="user.rules == 'SUPER_USER'">Option</th>
             </tr>
         </thead>
         <tbody>
@@ -23,7 +23,7 @@
                 <td>{{ project.prof }}</td>
                 <td>
                     <form class="d-inline">
-                        <input type="submit" value="Archiver" class="btn btn-info">
+                        <input type="submit" value="Archiver" class="btn btn-info" *ngIf="user.rules == 'SUPER_USER'">
                     </form>
                 </td>
             </tr>

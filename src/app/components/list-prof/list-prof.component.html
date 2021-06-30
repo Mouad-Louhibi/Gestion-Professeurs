@@ -24,7 +24,7 @@
                 <td>
                     <a href="/edit-prof" class="btn btn-warning mr-2" (click)="sendProf(prof)">Modifier</a>
                     <form class="d-inline">
-                        <input type="submit" value="Supprimer" class="btn btn-danger" (click)="deleteProf(prof.id)">
+                        <input type="submit" value="Supprimer" class="btn btn-danger" (click)="deleteProf(prof.id)" *ngIf="user.rules == 'SUPER_USER'">
                     </form>
                 </td>
             </tr>

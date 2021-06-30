@@ -40,4 +40,16 @@ export class CompetanceService {
   getCompetances(): Array<Competance> {
     return this.competances;
   }
+
+  public deleteCompetance(id: String): void {
+    this.httpClient.delete(this.url + '/' + id)
+      .subscribe({
+        next: data => {
+          'Delete successful';
+        },
+        error: error => {
+          console.error('There was an error!', error)
+        },
+      })
+  }
 }
