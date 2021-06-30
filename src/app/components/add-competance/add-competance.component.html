@@ -3,7 +3,7 @@
         <li class="breadcrumb-item"><a href="/list-competance">Competances</a></li>
         <li class="breadcrumb-item active">Ajouter</li>
     </ol>
-    <form [formGroup]="form">
+    <form (ngSubmit)="onSubmit()" [formGroup]="form">
         <div class="form-group">
             <label>Nom</label>
             <input type="text" class="form-control" placeholder="Nom" formControlName="nom">
@@ -12,7 +12,7 @@
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Description</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                    formControlName="prenom"></textarea>
+                    formControlName="description"></textarea>
             </div>
         </div>
         <button type="submit" class="btn btn-primary">
