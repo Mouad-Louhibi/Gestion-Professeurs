@@ -50,8 +50,10 @@
     </ul>
     <ul class="navbar-nav text-right">
       <li class="nav-item active">
-        <a class="nav-link" href="/login" *ngIf="etat == 'Register'"
-          (click)="etat = 'Login'">Login</a>
+        <a class="nav-link" routerLink="/login" *ngIf="user.etat == 'OffLine' && etat == 'Register'" (click)="etat = 'Login'">Login</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/register" *ngIf="user.etat == 'OffLine' && etat == 'Login'" (click)="etat = 'Register'">Register</a>
       </li>
       <li class="nav-item active">
         <button><a class="nav-link" *ngIf="user.etat == 'OnLine'" (click)="exit()">Logout</a></button>

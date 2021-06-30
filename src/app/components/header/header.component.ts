@@ -10,9 +10,9 @@ import { Router } from '@angular/router'
 })
 export class HeaderComponent implements OnInit {
 
-  public user: User = new User()
   public etat: string = 'Login'
 
+  public user: User = new User()
   constructor(private service: UserService, private router: Router) {
     this.user = this.service.getCurrent()
   }

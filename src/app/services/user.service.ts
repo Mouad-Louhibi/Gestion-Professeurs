@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from '../models/User';
 
 
@@ -14,7 +15,7 @@ export class UserService {
   private urlCurrent: string = "http://localhost:1337/user/current";
   public currnetUser: User = new User()
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient, private router: Router) {
     this.httpClient.get<any>(this.urlCurrent)
       .subscribe(
         (res) => {
@@ -37,11 +38,16 @@ export class UserService {
       email: user.email,
       password: user.password,
     }
-    this.httpClient.post<User>(this.url, newUser)
+    this.httpClient.post<any>(this.url, newUser)
       .subscribe(
-        (res) => { console.log(res) },
-        (err) => { console.log(err) },
-        () => { console.log("User Created") }
+        (res) => {
+          if (res.message === 'User Created Successfully') {
+            this.router.navigate(['/login'])
+          } else {
+            window.alert(res.message)
+          }
+        },
+        (err) => { console.log(err) }
       );
   }
 
@@ -49,7 +55,13 @@ export class UserService {
   public login(user: User): void {
     this.httpClient.post<any>(this.urlLogin, user)
       .subscribe(
-        (res) => { console.log('Login', res) },
+        (res) => {
+          if (res.message === 'User Logged In Successfully') {
+            location.replace("http://localhost:4200/")
+          } else {
+            window.alert(res.message)
+          }
+        },
         (err) => { console.log(err) },
       );
   }
@@ -58,7 +70,13 @@ export class UserService {
   public logout(): void {
     this.httpClient.get<any>(this.urlLogout)
       .subscribe(
-        (res) => { console.log('Logout:', res) },
+        (res) => {
+          if (res.message === 'User Logged Out Successfully') {
+            location.replace("http://localhost:4200/login")
+          } else {
+            window.alert(res.message)
+          }
+        },
         (err) => { console.log(err) },
       );
   }
