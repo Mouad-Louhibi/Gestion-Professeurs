@@ -10,6 +10,7 @@
                 <th scope="col">Nom</th>
                 <th scope="col">Prenom</th>
                 <th scope="col">Etat</th>
+                <th scope="col">Competance</th>
                 <th scope="col">Options</th>
             </tr>
         </thead>
@@ -19,6 +20,7 @@
                 <td>{{ prof.nom }}</td>
                 <td>{{ prof.prenom }}</td>
                 <td>{{ prof.etat }}</td>
+                <td>{{ prof.competance }}</td>
                 <td>
                     <a href="/edit-prof" class="btn btn-warning mr-2" (click)="sendProf(prof)">Modifier</a>
                     <form class="d-inline">

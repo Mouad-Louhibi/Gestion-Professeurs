@@ -4,14 +4,13 @@ export class Professeur {
     public prenom: string;
     public etat: string;
     public competance: string;
-    public profId: string;
+    public profId: string = ''
 
-    public constructor(id = "", nom = "", prenom = "", competance = "", etat = "", profId = "") {
+    public constructor(id = "", nom = "", prenom = "", etat = "", competance = "") {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
         this.etat = etat;
         this.competance = competance;
-        this.profId = profId;
     }
 }

@@ -22,22 +22,22 @@ export class ProjectService {
 
   // POST Project
   public addProject(project: Project): void {
-    // console.log('Project', project)
     const prjObj = {
       sujet: project.sujet,
       description: project.description,
       chef: project.chef,
-      prof: project.chercheur
+      prof: project.prof,
     }
+    console.log('Project', prjObj)
     this.httpClient.post<any>(this.url, project)
       .subscribe(
-        // (res) => {
-        //   if (res.message === 'Project Created Successfully') {
-        //     location.replace("http://localhost:4200/list-project")
-        //   } else {
-        //     window.alert(res.message)
-        //   }
-        // },
+        (res) => {
+          if (res.message === 'Project Created Successfully') {
+            location.replace("http://localhost:4200/list-project")
+          } else {
+            window.alert(res.message)
+          }
+        },
         (err) => { console.log(err) },
       );
   }

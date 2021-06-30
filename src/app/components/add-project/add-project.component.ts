@@ -29,8 +29,6 @@ export class AddProjectComponent implements OnInit {
   }
 
   public onSubmit(): void {
-    console.log('Chef:', this.form.controls['Chef'].value)
-    console.log('chercheur:', this.form.controls['chercheur'].value)
     this.service.addProject(
       new Project(
         '',// id

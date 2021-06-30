@@ -25,10 +25,15 @@ export class ProfesseurService {
 
   // POST Professeur
   public addProf(prof: Professeur): void {
-    console.log('Prof', prof)
-    this.httpClient.post<Professeur>(this.url, prof)
+    this.httpClient.post<any>(this.url, prof)
       .subscribe(
-        (res) => { this.profs.push(prof) },
+        (res) => {
+          if (res.message === 'Professeur Created Successfully') {
+            location.replace("http://localhost:4200/list-prof")
+          } else {
+            window.alert(res.message)
+          }
+        },
         (err) => { console.log(err) },
         () => { console.log("Professeur Created") }
       );

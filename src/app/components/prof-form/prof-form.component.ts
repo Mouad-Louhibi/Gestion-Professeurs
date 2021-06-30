@@ -34,15 +34,13 @@ export class ProfFormComponent implements OnInit {
     const prenom = this.form.controls['prenom'].value
     const etat = this.form.controls['etat'].value
     const competance = this.form.controls['competance'].value
-    const profId = ''
     this.service.addProf(
       new Professeur(
         id,
         nom,
         prenom,
         etat,
-        competance,
-        profId
+        competance
       )
     )
     this.form.reset()
