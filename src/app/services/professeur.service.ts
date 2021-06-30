@@ -9,8 +9,9 @@ export class ProfesseurService {
 
   public profs: Array<Professeur>
   private url: string = "http://localhost:1337/professeur";
-  private updateUrl: string = "http://localhost:1337/edit-professeur/60d8b40101c6653f70510e61";
+  private updateUrl: string = "http://localhost:1337/edit-professeur";
   private getUrl: string = "http://localhost:1337/edit-professeur";
+  private updatedProf: Array<Professeur>
 
   constructor(private httpClient: HttpClient) {
     this.profs = new Array<Professeur>();
@@ -20,7 +21,13 @@ export class ProfesseurService {
         (res) => { this.profs.push(...res) },
         (err) => { console.log(err) }
       );
-    this.profs = new Array<Professeur>();
+
+    this.updatedProf = new Array<Professeur>();
+    this.httpClient.get<Array<Professeur>>(this.getUrl)
+      .subscribe(
+        (res) => { this.updatedProf.push(...res) },
+        (err) => { console.log(err) }
+      );
   }
 
   // POST Professeur
@@ -43,7 +50,8 @@ export class ProfesseurService {
     let profObj = {
       nom: prof.nom,
       prenom: prof.prenom,
-      etat: prof.etat
+      etat: prof.etat,
+      competance: prof.competance
     }
     this.httpClient.patch<Professeur>(this.url + '/' + prof.profId, profObj)
       .subscribe({
@@ -76,8 +84,7 @@ export class ProfesseurService {
       etat: profToUpdate.etat,
       profId: profToUpdate.id
     }
-    console.log("PTCH:", profObj)
-    this.httpClient.patch<Professeur>(this.updateUrl, profObj)
+    this.httpClient.patch<Professeur>(this.updateUrl + '/' + this.updatedProf[0].id, profObj)
       .subscribe({
         error: error => {
           console.error('There was an error!', error);

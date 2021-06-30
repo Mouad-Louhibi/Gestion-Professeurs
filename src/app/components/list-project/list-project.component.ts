@@ -21,4 +21,8 @@ export class ListProjectComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  archive(id: string) {
+    this.service.archiveProject(id)
+  }
 }

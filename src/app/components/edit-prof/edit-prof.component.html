@@ -17,6 +17,7 @@
         <div class="form-group">
             <label>Etat</label>
             <select class="form-control" formControlName="etat" value="{{ prof.etat }}">
+                <option></option>
                 <option>Interne</option>
                 <option>Collaborateur</option>
             </select>
@@ -24,7 +25,8 @@
         <div class="form-group">
             <label>Competance</label>
             <select class="form-control" formControlName="competance" value="{{ prof.competance }}">
-                <option>Interne</option>
+                <option></option>
+                <option *ngFor="let comp of competances">{{ comp.nom }}</option>
             </select>
         </div>
         <a href="/list-prof" class="btn btn-warning" (click)="onSubmit()">Modifier Professeur</a>

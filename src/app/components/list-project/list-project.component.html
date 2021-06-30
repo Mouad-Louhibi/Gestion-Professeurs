@@ -23,7 +23,7 @@
                 <td>{{ project.prof }}</td>
                 <td>
                     <form class="d-inline">
-                        <input type="submit" value="Archiver" class="btn btn-info" *ngIf="user.rules == 'SUPER_USER'">
+                        <input type="submit" value="Archiver" class="btn btn-info" *ngIf="user.rules == 'SUPER_USER'" (click)="archive(project.id)">
                     </form>
                 </td>
             </tr>

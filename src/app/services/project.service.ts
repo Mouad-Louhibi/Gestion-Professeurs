@@ -42,6 +42,16 @@ export class ProjectService {
       );
   }
 
+  public archiveProject(projectId: string): void {
+    let archive = true
+    this.httpClient.patch<any>(this.url + '/' + projectId, 'true')
+      .subscribe({
+        error: error => {
+          console.error('There was an error!', error);
+        }
+      });
+  }
+
   getProjects(): Array<Project> {
     return this.projects
   }

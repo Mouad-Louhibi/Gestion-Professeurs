@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Competance } from 'src/app/models/Competance';
 import { Professeur } from 'src/app/models/Professeur';
+import { CompetanceService } from 'src/app/services/competance.service';
 import { ProfesseurService } from 'src/app/services/professeur.service';
 
 @Component({
@@ -12,9 +14,11 @@ export class EditProfComponent implements OnInit {
 
   public form: any;
   public prof: Professeur
+  public competances: Array<Competance>
 
-  constructor(private service: ProfesseurService) {
+  constructor(private service: ProfesseurService, private compService: CompetanceService) {
     this.prof = service.getEditProf()
+    this.competances = this.compService.getCompetances()
   }
 
   ngOnInit(): void {
