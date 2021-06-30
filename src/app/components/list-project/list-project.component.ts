@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Project } from 'src/app/models/Project';
+import { ProjectService } from 'src/app/services/project.service';
 
 @Component({
   selector: 'app-list-project',
@@ -8,48 +9,12 @@ import { Project } from 'src/app/models/Project';
 })
 export class ListProjectComponent implements OnInit {
 
-  public projects: Array<Project> = [
-    new Project(
-      '60d8c8ccc5c20a25948d8022',
-      'Gestion de Stock',
-      'Gestion des commandes et facturation',
-      'Mouad Louhibi',
-      'Leo Messi',
-      '01-07-2021',
-      ''
-    ),
-    new Project(
-      '60d8c8ccc5c20a25948d8022',
-      'Gestion de Stock',
-      'Gestion des commandes et facturation',
-      'Mouad Louhibi',
-      'Leo Messi',
-      '01-07-2021',
-      ''
-    ),
-    new Project(
-      '60d8c8ccc5c20a25948d8022',
-      'Gestion de Stock',
-      'Gestion des commandes et facturation',
-      'Mouad Louhibi',
-      'Leo Messi',
-      '01-07-2021',
-      ''
-    ),
-    new Project(
-      '60d8c8ccc5c20a25948d8022',
-      'Gestion de Stock',
-      'Gestion des commandes et facturation',
-      'Mouad Louhibi',
-      'Leo Messi',
-      '01-07-2021',
-      ''
-    )
-  ]
+  public projects: Array<Project>
 
-  constructor() { }
+  constructor(private service: ProjectService) {
+    this.projects = this.service.getProjects()
+  }
 
   ngOnInit(): void {
   }
-
 }

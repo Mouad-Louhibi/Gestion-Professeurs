@@ -6,15 +6,16 @@ export class Project {
     public chercheur: string;
     public dateDebut: string;
     public projetId: string;
-    // public archive: boolean;
+    public archive: boolean;
 
-    public constructor(id = "", sujet = "", description = "", chef = "", chercheur = "", dateDebut = "", projetId = "") {
+    public constructor(id = "", sujet = "", description = "", chef = "", chercheur = "", dateDebut = "", archive = false, projetId = "") {
         this.id = id;
         this.sujet = sujet;
         this.description = description;
         this.chef = chef;
         this.chercheur = chercheur;
         this.dateDebut = dateDebut;
+        this.archive = archive;
         this.projetId = projetId;
     }
 }

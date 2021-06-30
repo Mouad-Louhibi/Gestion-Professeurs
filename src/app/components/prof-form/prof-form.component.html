@@ -24,7 +24,7 @@
         <div class="form-group">
             <label>Competance</label>
             <select class="form-control" formControlName="competance">
-                <option>Interne</option>
+                <option *ngFor="let comp of competances">{{ comp.nom }}</option>
             </select>
         </div>
         <button type="submit" class="btn btn-primary" [disabled]="!form.valid">

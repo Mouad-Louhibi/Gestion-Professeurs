@@ -37,7 +37,7 @@ export class CompetanceService {
       );
   }
 
-  getCompetances() {
+  getCompetances(): Array<Competance> {
     return this.competances;
   }
 }

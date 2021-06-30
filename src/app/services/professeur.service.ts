@@ -25,7 +25,7 @@ export class ProfesseurService {
 
   // POST Professeur
   public addProf(prof: Professeur): void {
-    console.log(prof)
+    console.log('Prof', prof)
     this.httpClient.post<Professeur>(this.url, prof)
       .subscribe(
         (res) => { this.profs.push(prof) },
