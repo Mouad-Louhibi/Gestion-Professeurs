@@ -21,7 +21,8 @@ const routes: Routes = [
   {path:'list-competance',component:ListCompetanceComponent},
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
-  {path:'', component:DashboardComponent},
+  {path:'dashboard', component:DashboardComponent},
+  {path:'', redirectTo: '/login', pathMatch: 'full'},
   // {path:"**",component:ErrorComponent},
 ];
 
